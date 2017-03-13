@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack"
   },
@@ -11,8 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.15.2",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "webpack-dev-middleware": "^1.10.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
