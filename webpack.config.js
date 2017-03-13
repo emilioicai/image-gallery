@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = { 
@@ -14,6 +15,7 @@ module.exports = {
         filename: 'index.html',
         template: './src/index.html'
     }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [
@@ -31,7 +33,8 @@ module.exports = {
                 'react',
               ],
             }
-          }
+          },
+
         ]
       },
       {
@@ -40,4 +43,7 @@ module.exports = {
       },
     ]
   },
+  devServer: {
+    hot: true
+  }
 };
