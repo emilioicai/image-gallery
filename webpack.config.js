@@ -31,6 +31,7 @@ module.exports = {
               presets: [
                 ['es2015', { modules: false }],
                 'react',
+                'stage-2'
               ],
             }
           },
