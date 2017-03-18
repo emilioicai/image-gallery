@@ -8,8 +8,8 @@ import Gallery from './components/Gallery.jsx'
 import reducers from './reducers'
 
 const store = createStore(
-  reducers,
-  applyMiddleware(thunk)
+	reducers,
+	applyMiddleware(thunk)
 );
 
 ReactDOM.render(

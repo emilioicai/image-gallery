@@ -32,6 +32,18 @@ class Gallery extends Component {
 	}
 };
 
+var styles = {
+	gallery: {
+		color: '#fff'
+	},
+
+	thumbnail: {
+		display: 'inline'
+	}
+};
+
+//*** REDUX BOILERPLATE ***
+
 function mapStateToProps(state) {
 	return {
 		images: state.images,
@@ -42,15 +54,5 @@ function mapStateToProps(state) {
 function mapActionCreatorsToProps(dispatch) {
 	return bindActionCreators(Actions, dispatch);
 }
-
-var styles = {
-	gallery: {
-		color: '#fff'
-	},
-
-	thumbnail: {
-		display: 'inline'
-	}
-};
 
 export default connect(mapStateToProps, mapActionCreatorsToProps)(Radium(Gallery))
