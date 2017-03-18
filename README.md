@@ -1,7 +1,7 @@
 Image Gallery
 ---
  
-A fine image gallery built with React, Redux and Redux Sagas
+A fine image gallery built with React and Redux
  
 Usage
 ---
@@ -12,10 +12,10 @@ Start the production server with this command:
 npm start
 ```
 
-Start the development server with this command:
+Watch the files to rebuild bundle on development:
  
 ```
-npm start-dev
+npm run watch
 ```
  
 Setup
