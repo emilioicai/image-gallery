@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "404875fb1e7c87ada065"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "890c0705512cdbb27bd5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -11608,21 +11608,25 @@ var Gallery = function (_Component) {
 				null,
 				images.map(function (image, index) {
 					return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						'div',
-						{ key: 'thumb' + index, style: styles.thumbnail, onClick: _this2.handleThumbnailClick.bind(_this2, image), onMouseOver: _this2.mouseOver.bind(_this2, 'thumb' + index), onMouseLeave: _this2.mouseOut.bind(_this2) },
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: image.url }),
-						_this2.state.hover === 'thumb' + index && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'a',
+						{ href: '#', key: 'thumb' + index },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							'div',
-							{ style: styles.description, key: 'desc' + index },
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'h4',
-								null,
-								image.title
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'h5',
-								null,
-								image.owner
+							{ style: styles.thumbnail, onClick: _this2.handleThumbnailClick.bind(_this2, image), onMouseOver: _this2.mouseOver.bind(_this2, 'thumb' + index), onMouseLeave: _this2.mouseOut.bind(_this2) },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: image.url }),
+							_this2.state.hover === 'thumb' + index && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ style: styles.description, key: 'desc' + index },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'h4',
+									null,
+									image.title
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'h5',
+									null,
+									image.owner
+								)
 							)
 						)
 					);
@@ -11672,10 +11676,10 @@ function ImageDetail(props) {
 	var image = props.image || {};
 	return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 		'div',
-		{ style: styles.container, onClick: props.onClick },
+		{ style: styles.overlay, onClick: props.onClick },
 		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
-			null,
+			{ style: styles.container },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: image.url }),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'h3',
@@ -11692,13 +11696,19 @@ function ImageDetail(props) {
 }
 
 var styles = {
-	container: {
+	overlay: {
 		position: 'absolute',
 		top: 0,
 		left: 0,
 		height: '100%',
 		width: '100%',
-		backgroundColor: 'rgba(255, 255, 255, 0.75)'
+		backgroundColor: 'rgba(255, 255, 255, 0.4)',
+		textAlign: 'center'
+	},
+	container: {
+		backgroundColor: '#EEE',
+		margin: '7% 15%',
+		padding: 20
 	}
 };
 

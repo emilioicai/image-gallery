@@ -27,16 +27,18 @@ export default class Gallery extends Component {
 		return (
 			<div>
 				{images.map((image, index) => (
-					<div key={'thumb' + index} style={styles.thumbnail} onClick={this.handleThumbnailClick.bind(this, image)} onMouseOver={this.mouseOver.bind(this, 'thumb' + index)} onMouseLeave={this.mouseOut.bind(this)}>
-						<img src={image.url}/>
-						{
-							this.state.hover === 'thumb' + index &&
-					    	<div style={styles.description} key={'desc' + index}>
-								<h4>{image.title}</h4>
-								<h5>{image.owner}</h5>
-							</div>
-						}
-					</div>
+					<a href='#' key={'thumb' + index}>
+						<div style={styles.thumbnail} onClick={this.handleThumbnailClick.bind(this, image)} onMouseOver={this.mouseOver.bind(this, 'thumb' + index)} onMouseLeave={this.mouseOut.bind(this)}>
+							<img src={image.url}/>
+							{
+								this.state.hover === 'thumb' + index &&
+						    	<div style={styles.description} key={'desc' + index}>
+									<h4>{image.title}</h4>
+									<h5>{image.owner}</h5>
+								</div>
+							}
+						</div>
+					</a>
 				))}
 			</div>
 		)
