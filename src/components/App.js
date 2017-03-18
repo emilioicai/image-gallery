@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Radium from 'radium'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -7,6 +6,7 @@ import * as Actions from '../actions'
 import Gallery from './Gallery'
 import ImageDetail from './ImageDetail'
 import Navigation from './Navigation'
+import LoadingSign from './LoadingSign'
 
 class App extends Component {
 	constructor(props) {
@@ -18,16 +18,16 @@ class App extends Component {
 	}
 
 	render() {
-		const { images, selectedImage, page } = this.props;
+		const { images, selectedImage, page, loadingImages } = this.props;
 		return (
 			<div style={styles.app}>
-				{/* PAGE SWITCHER */}
 				<Navigation page={page} selectPage={this.props.selectPage}/>
+				
+				<div style={styles.galleryContainer}>
+					<Gallery images={images} selectImage={this.props.selectImage}/>
+					{ loadingImages && <LoadingSign /> }
+				</div>
 
-				{/* LIST OF IMAGES */}
-				<Gallery images={images} selectImage={this.props.selectImage}/>
-
-				{/* IMAGE DETAIL */}
 				{ selectedImage && <ImageDetail image={selectedImage} onClick={this.props.unselectImage} /> }
 			</div>
 		)
@@ -37,6 +37,10 @@ class App extends Component {
 var styles = {
 	app: {
 		position: 'relative',
+	},
+	galleryContainer: {
+		position: 'relative',
+		textAlign: 'center'
 	}
 };
 
@@ -46,7 +50,8 @@ function mapStateToProps(state) {
 	return {
 		images: state.images,
 		selectedImage: state.selectedImage,
-		page: state.page
+		page: state.page,
+		loadingImages: state.loadingImages
 	}
 }
 
@@ -54,4 +59,4 @@ function mapActionCreatorsToProps(dispatch) {
 	return bindActionCreators(Actions, dispatch);
 }
 
-export default connect(mapStateToProps, mapActionCreatorsToProps)(Radium(App))
+export default connect(mapStateToProps, mapActionCreatorsToProps)(App)

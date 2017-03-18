@@ -4,9 +4,11 @@ export default function ImageDetail(props) {
 	const image = props.image || {};
 	return (
 		<div style={styles.container} onClick={props.onClick}>
-			<img src={image.url} />
-			<h3>{image.owner}</h3>
-			<h4>{image.title}</h4>
+			<div>
+				<img src={image.url} />
+				<h3>{image.owner}</h3>
+				<h4>{image.title}</h4>
+			</div>
 		</div>
 	);
 }

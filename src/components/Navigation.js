@@ -17,7 +17,7 @@ export default class Navigation extends Component {
 			range.push(i++);
 		}
 		return (
-			<div>
+			<div style={styles.container}>
 				{
 					range.map((i) => {
 						if(i === page) {
@@ -34,6 +34,10 @@ export default class Navigation extends Component {
 }
 
 var styles = {
+	container: {
+		textAlign: 'center',
+		padding: 20
+	},
 	pageLink: { 
 		margin: '0 5px'
 	},
