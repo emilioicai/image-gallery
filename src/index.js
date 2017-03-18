@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
-import Gallery from './components/Gallery.jsx'
+import App from './components/App'
 import reducers from './reducers'
 
 const store = createStore(
@@ -14,7 +14,7 @@ const store = createStore(
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Gallery />
+		<App />
 	</Provider>,
 	document.getElementById('main')
 );  
