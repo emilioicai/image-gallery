@@ -13,7 +13,13 @@ exports.getImagesFromPage = function(req, res) {
 				photos = eval(body);
 			}
 
-			res.json(photos);
+			res.json(photos.map((photo) => {
+				return {
+					title: photo.title,
+					owner: photo.ownername,
+					url: photo.url_m
+				}
+			}));
 		}
 	);
 };
