@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "19b123128a49995ec789"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "df8c6f37dbba20a99982"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -27047,12 +27047,17 @@ function ImageDetail(props) {
 	return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 		'div',
 		{ style: styles.container, onClick: props.onClick },
+		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: image.url }),
 		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'h3',
 			null,
-			'Hola'
+			image.owner
 		),
-		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: image.url })
+		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+			'h4',
+			null,
+			image.title
+		)
 	);
 }
 
