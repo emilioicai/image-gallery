@@ -21,7 +21,7 @@ export default class Navigation extends Component {
 				{
 					range.map((i) => {
 						if(i === page) {
-							return (<span style={styles.currentPage}>{i}</span>);
+							return (<span style={styles.currentPage} key={'current'}>{i}</span>);
 						} else {
 							return (<a href="#" key={i} onClick={this.handlePageLinkClick.bind(this, i)} style={styles.pageLink}>{i}</a>);
 						}

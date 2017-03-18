@@ -14,7 +14,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.props.fetchImages();
+		this.props.selectPage(1);
 	}
 
 	render() {

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ff9bb1d24ea75725a004"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "19b123128a49995ec789"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -11352,7 +11352,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PAGE_CHANGED", function() { return PAGE_CHANGED; });
 /* harmony export (immutable) */ __webpack_exports__["selectImage"] = selectImage;
 /* harmony export (immutable) */ __webpack_exports__["unselectImage"] = unselectImage;
-/* harmony export (immutable) */ __webpack_exports__["fetchImages"] = fetchImages;
 /* harmony export (immutable) */ __webpack_exports__["selectPage"] = selectPage;
 
 
@@ -11361,46 +11360,33 @@ var FETCH_IMAGES_DONE = 'FETCH_IMAGES_DONE';
 var PAGE_CHANGED = 'PAGE_CHANGED';
 
 function selectImage(image) {
-	return {
-		type: IMAGE_SELECTED,
-		image: image
-	};
+    return {
+        type: IMAGE_SELECTED,
+        image: image
+    };
 }
 
 function unselectImage() {
-	return {
-		type: IMAGE_SELECTED,
-		image: null
-	};
-}
-
-function fetchImages() {
-	var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-
-	return function (dispatch) {
-		__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__api__["a" /* fetchImagesPerPage */])(page).then(function (images) {
-			dispatch({
-				type: FETCH_IMAGES_DONE,
-				images: images
-			});
-		});
-	};
+    return {
+        type: IMAGE_SELECTED,
+        image: null
+    };
 }
 
 function selectPage(page) {
-	return function (dispatch) {
-		__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__api__["a" /* fetchImagesPerPage */])(page).then(function (images) {
-			dispatch({
-				type: FETCH_IMAGES_DONE,
-				images: images
-			});
+    return function (dispatch) {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__api__["a" /* fetchImagesPerPage */])(page).then(function (images) {
+            dispatch({
+                type: FETCH_IMAGES_DONE,
+                images: images
+            });
 
-			dispatch({
-				type: PAGE_CHANGED,
-				page: page
-			});
-		});
-	};
+            dispatch({
+                type: PAGE_CHANGED,
+                page: page
+            });
+        });
+    };
 }
 
 /***/ }),
@@ -27000,7 +26986,7 @@ var App = function (_Component) {
 	_createClass(App, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			this.props.fetchImages();
+			this.props.selectPage(1);
 		}
 	}, {
 		key: 'render',
@@ -30153,7 +30139,7 @@ var Navigation = function (_Component) {
 					if (i === page) {
 						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							'span',
-							{ style: styles.currentPage },
+							{ style: styles.currentPage, key: 'current' },
 							i
 						);
 					} else {
