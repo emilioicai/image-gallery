@@ -5,7 +5,7 @@ export default function ImageDetail(props) {
 	return (
 		<div style={styles.overlay} onClick={props.onClick}>
 			<div style={styles.container}>
-				<img src={image.url} />
+				<img src={image.url} style={styles.image}/>
 				<h3>{image.owner}</h3>
 				<h4>{image.title}</h4>
 			</div>
@@ -27,5 +27,8 @@ var styles = {
 		backgroundColor: '#EEE',
 		margin: '7% 15%',
 		padding: 20
+	},
+	image: {
+		width: '100%'
 	}
 };

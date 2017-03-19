@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "890c0705512cdbb27bd5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "78ac5ead7da556e5a1f7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -11680,7 +11680,7 @@ function ImageDetail(props) {
 		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			{ style: styles.container },
-			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: image.url }),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: image.url, style: styles.image }),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'h3',
 				null,
@@ -11709,6 +11709,9 @@ var styles = {
 		backgroundColor: '#EEE',
 		margin: '7% 15%',
 		padding: 20
+	},
+	image: {
+		width: '100%'
 	}
 };
 
