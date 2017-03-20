@@ -27,7 +27,7 @@ export default class Gallery extends Component {
 		return (
 			<div>
 				{images.map((image, index) => (
-					<a href='#' key={'thumb' + index}>
+					<a href='#' key={'thumb' + index} id={'thumb' + index} >
 						<div style={styles.thumbnail} onClick={this.handleThumbnailClick.bind(this, image)} onMouseOver={this.mouseOver.bind(this, 'thumb' + index)} onMouseLeave={this.mouseOut.bind(this)}>
 							<img src={image.url}/>
 							{

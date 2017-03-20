@@ -8,6 +8,10 @@ const defaultState = {
 }
 
 export default function images(state = defaultState, action) {
+	if(!action || !action.type) {
+		return state;
+	} 
+
 	switch(action.type) {
 		case IMAGE_SELECTED:
 		return {...state, selectedImage: action.image};
