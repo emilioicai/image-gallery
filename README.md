@@ -34,6 +34,8 @@ Start the server with this command:
 npm start
 ```
 
+The server should be available at http://localhost:3000
+
 Development
 ---
  
